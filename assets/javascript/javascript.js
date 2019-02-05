@@ -34,6 +34,16 @@ $("#frequency").val("");
 database.ref().on("child_added",function(childSnapshot){
 var name = childSnapshot.val().name;
 var destination = childSnapshot.val().destination;
+var firstTrain = childSnapshot.val().firstTrain;
+var frequency = childSnapshot.val().frequency;
 
-$("#table-data").append("<tr>" + "<td>" + name + "</td> <td>" + destination + "</td> <td>" + "placeholder" + "</td> <td>" + "placeholder" + "</td> <td>" + "placeholder" + "</td> </tr>");
+
+var firstTrainConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
+console.log(firstTrainConverted);
+
+var currentTime = moment();
+console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+var nextArrival = 
+
+$("#table-data").append("<tr>" + "<td>" + name + "</td> <td>" + destination + "</td> <td>" + frequency + "</td> <td>" + "placeholder" + "</td> <td>" + "placeholder" + "</td> </tr>");
 });
