@@ -7,7 +7,6 @@ var config = {
     storageBucket: "train-times-16c7d.appspot.com",
     messagingSenderId: "671310355966"
   };
-  firebase.initializeApp(config);
 
 firebase.initializeApp(config);
 
@@ -30,8 +29,11 @@ $("#destination").val("");
 $("#first-train").val("");
 $("#frequency").val("");
 
-})
+});
 
 database.ref().on("child_added",function(childSnapshot){
 var name = childSnapshot.val().name;
 var destination = childSnapshot.val().destination;
+
+$("#table-data").append("<tr>" + "<td>" + name + "</td> <td>" + destination + "</td> <td>" + "placeholder" + "</td> <td>" + "placeholder" + "</td> <td>" + "placeholder" + "</td> </tr>");
+});
