@@ -43,7 +43,17 @@ console.log(firstTrainConverted);
 
 var currentTime = moment();
 console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-var nextArrival = 
+var diffTime = moment().diff(moment(firstTrainConverted), "minutes");
+console.log("DIFFERENCE IN TIME: " + diffTime); 
 
-$("#table-data").append("<tr>" + "<td>" + name + "</td> <td>" + destination + "</td> <td>" + frequency + "</td> <td>" + "placeholder" + "</td> <td>" + "placeholder" + "</td> </tr>");
+var tRemainder = diffTime % frequency;
+console.log(tRemainder);
+
+var minutesAway = frequency - tRemainder;
+console.log("MINUTES TILL TRAIN: " + minutesAway);
+
+var nextArrival = moment().add(minutesAway, "minutes").format("hh:mm a");
+console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm"));
+
+$("#table-data").append("<tr>" + "<td>" + name + "</td> <td>" + destination + "</td> <td>" + frequency + "</td> <td>" + nextArrival + "</td> <td>" + minutesAway + "</td> </tr>");
 });
