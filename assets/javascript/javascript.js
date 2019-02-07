@@ -41,8 +41,6 @@ var frequency = childSnapshot.val().frequency;
 var firstTrainConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
 // console.log(firstTrainConverted);
 
-var currentTime = moment();
-// console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 var diffTime = moment().diff(moment(firstTrainConverted), "minutes");
 // console.log("DIFFERENCE IN TIME: " + diffTime); 
 

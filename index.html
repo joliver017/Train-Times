@@ -20,17 +20,17 @@
         <!-- Header -->
         <div class="container bg-dark rounded pt-5 pb-4 mb-4">
             <h2 class="text-white text-center"><i class="material-icons">web
-                </i> Don't Miss the Train</h2>
+                </i> Don't Miss the Train!</h2>
                 <h6 class="text-white text-center">A Schedule for Trains</h6>
         </div>
         
         <!-- Container for the fields -->
         <div class="container border border-dark rounded p-4 mb-4">
             <div class="row pl-4 mb-4">
-                <h4><i class="material-icons">speaker_notes</i> Current Train Schedules</h4>
+                <h4><i class="material-icons">table_chart</i> Current Train Schedules</h4>
             </div>
 
-            <table class="table">
+            <table class="table table-dark table-striped">
                 <thead>
                   <tr>
                     <th scope="col">Train Name</th>
@@ -40,78 +40,60 @@
                     <th scope="col">Minutes Away</th>
                   </tr>
                 </thead>
-                <tbody id="table-data">
-                <!-- This was to test how the table would look, commenting out -->    
-                  <!-- <tr>
-                    <td>Choo Train</td>
-                    <td>Austin, TX</td>
-                    <td>10</td>
-                    <td>5:40 pm</td>
-                    <td>7</td>
-                  </tr>
-                  <tr>
-                    <td>Chee Train</td>
-                    <td>Houston, TX</td>
-                    <td>180</td>
-                    <td>7:00 pm</td>
-                    <td>87</td>
-                  </tr> -->
+                <tbody id="table-data" >
+                    <!-- Dynamic table data from Firebase goes here -->    
                 </tbody>
               </table>
-            
-
-            
-
-            
-
 
         </div>
 
         <!-- Separate container for Field Inputs -->
         <div class="container border border-dark rounded p-4 mb-4">
                 <div class="row pl-4 mb-4">
-                        <h4><i class="material-icons">table_chart
+                        <h4><i class="material-icons">speaker_notes
                         </i> Add Train</h4>
                 </div>
+
+            <!-- Form to fill out all the inputs --> 
             <form id="fields">
                 <!-- Train Name field -->
                 <div class="row pl-4">
-                <label for="search-term">Train Name</label>
+                <label for="search-term" class="font-weight-bold">Train Name</label>
                 </div>
                 <div class="row pl-4 pr-4 mr-3">
-                <input type="text" class="form-control" id="name" required>
+                <input type="text" class="form-control bg-dark text-white" id="name" required>
                 </div>
                 <br>
 
                 <!-- Destination field -->
                 <div class="row pl-4">
-                <label for="search-term">Destination</label>
+                <label for="search-term" class="font-weight-bold">Destination</label>
                 </div>
                 <div class="row pl-4 pr-4 mr-3">
-                <input type="text" class="form-control" id="destination" required>
+                <input type="text" class="form-control bg-dark text-white" id="destination" required>
                 </div>
                 <br>
 
                 <!-- First Train Time field -->
                 <div class="row pl-4">
-                <label for="search-term">First Train Time (HH:mm - military time)</label>
+                <label for="search-term" class="font-weight-bold">First Train Time (HH:mm - military time)</label>
                 </div>
                 <div class="row pl-4 pr-4 mr-3">
-                <input type="text" class="form-control" id="first-train" required>
+                <input type="text" class="form-control bg-dark text-white" id="first-train" required>
                 </div>
                 <br>
 
                 <!-- Frequency field -->
                 <div class="row pl-4">
-                <label for="search-term">Frequency (min)</label>
+                <label for="search-term" class="font-weight-bold">Frequency (min)</label>
                 </div>
                 <div class="row pl-4 pr-4 mr-3">
-                <input type="text" class="form-control" id="frequency" required>
+                <input type="text" class="form-control bg-dark text-white" id="frequency" required>
                 </div>
                 <br>
             
 
-                <button type="submit" class="btn btn-dark mr-3" id="submit-btn">
+                <button type="submit" class="btn btn-dark ml-2" id="submit-btn">
                     <i class="material-icons">search</i> Submit
                 </button>
             </form>
